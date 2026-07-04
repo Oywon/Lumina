@@ -6,7 +6,7 @@ export const getSnapshot = createServerFn({ method: "GET" }).handler(async () =>
   return loadSnapshot();
 });
 
-const ToggleInput = z.object({ deviceId: z.string().uuid(), is_on: z.boolean() });
+const ToggleInput = z.object({ deviceId: z.string().min(1), is_on: z.boolean() });
 export const toggleDevice = createServerFn({ method: "POST" })
   .inputValidator((input: unknown) => ToggleInput.parse(input))
   .handler(async ({ data }) => {

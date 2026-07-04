@@ -19,13 +19,13 @@ import { motion } from "framer-motion";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Office Power Monitor — Live Dashboard" },
+      { title: "Lumina — Office Power Monitor" },
       {
         name: "description",
         content:
           "Live view of every fan and light in the office, real-time power draw, and after-hours alerts. Same data powers the Discord bot.",
       },
-      { property: "og:title", content: "Office Power Monitor" },
+      { property: "og:title", content: "Lumina — Office Power Monitor" },
       {
         property: "og:description",
         content:
@@ -125,15 +125,12 @@ function Dashboard() {
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center gap-3"
           >
-            <div
-              className="flex h-10 w-10 items-center justify-center rounded-lg text-primary-foreground shadow-(--shadow-glow)"
-              style={{ background: "var(--gradient-brand)" }}
-            >
-              <Zap className="h-5 w-5" />
+            <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-lg border border-border/70 bg-background/70 shadow-(--shadow-glow)">
+              <img src="/lumina-logo.png" alt="Lumina logo" className="h-9 w-9 object-contain" />
             </div>
             <div>
               <h1 className="text-lg font-semibold tracking-tight text-foreground">
-                Office Power Monitor
+                Lumina: Office Power Monitor
               </h1>
               <p className="text-[11px] font-mono uppercase tracking-widest text-muted-foreground">
                 Live · 3 rooms · 18 devices
