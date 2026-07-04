@@ -1,0 +1,23 @@
+Office Power Monitor — High-Level System Diagram
+
+[Physical / simulated devices]
+  └─ 15 devices (3 rooms × 2 fans + 3 lights)
+        │
+        ▼
+[Simulator / tick engine]
+  └─ updates device state, wattage, and alerts every minute
+        │
+        ▼
+[Shared backend]
+  ├─ in-memory store (local demo mode)
+  └─ Supabase/Postgres (cloud mode when configured)
+        ├─ device state
+        ├─ hourly usage
+        ├─ alerts
+        └─ settings
+        │
+        ├──────────────► [Web dashboard]
+        │                    └─ live room panels, power meter, alerts
+        │
+        └──────────────► [Discord bot]
+                         └─ !status, !room, !usage
